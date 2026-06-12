@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+require "json"
+
+file_path = Rails.root.join("db", "seeds", "parking_spots.json")
+parking_spots = JSON.parse(File.read(file_path))
+
+puts "Seed started"
+
+parking_spots.each do |spot_data|
+  ParkingSpot.create!(spot_data)
+  puts "Seeded #{ParkingSpot.count} parking spots"
+end
+
+puts "Seed finished"
