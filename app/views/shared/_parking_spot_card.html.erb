@@ -1,0 +1,19 @@
+<div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+  <h2 class="text-lg font-semibold text-gray-900">
+    <%= parking_spot.name %>
+  </h2>
+
+  <p class="mt-1 text-sm text-gray-600">
+    <%= parking_spot.address %>
+  </p>
+
+  <% if parking_spot.source_url.present? %>
+    <div class="mt-4">
+      <%= link_to "View source",
+          parking_spot.source_url,
+          target: "_blank",
+          rel: "noopener",
+          class: "text-sm font-medium text-blue-600 hover:text-blue-800" %>
+    </div>
+  <% end %>
+</div>

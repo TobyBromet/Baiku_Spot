@@ -1,10 +1,11 @@
-<div class="flex flex-col items-center justify-center h-screen">
-    <% @parking_spots.each do |spot| %>
-        <div>
-            <p>
-                <strong><%= spot.name %></strong><br>
-                <%= spot.address %>
-            </p>
-        </div>
+<div class="min-h-screen bg-gray-50 px-4 py-8">
+  <div class="mx-auto max-w-3xl space-y-4">
+    <h1 class="text-2xl font-bold text-gray-900">
+      Motorbike Parking
+    </h1>
+
+    <% @parking_spots.each do |parking_spot| %>
+      <%= render "shared/parking_spot_card", parking_spot: parking_spot %>
     <% end %>
+  </div>
 </div>
